@@ -69,7 +69,7 @@ body {
   padding-left: 20px;
 }
 
-.skill {
+/*.skill {
   margin-bottom: 10px;
 }
 .skill span {
@@ -87,7 +87,7 @@ body {
 .bar div {
   height: 10px;
   background: #3498db;
-}
+}*/
 .contact a {
   color: #ecf0f1;
   text-decoration: none;
@@ -110,4 +110,19 @@ body {
   width: 195px;
   height: auto;
   border-radius: 50%;
+}
+#download-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+#download-btn:hover {
+  background: #2980b9;
 }

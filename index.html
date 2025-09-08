@@ -20,75 +20,79 @@
         <li><i class="fas fa-envelope"></i> 24102016@utfv.edu.mx</li>
         <li><i class="fas fa-phone"></i> +52 563 118 2133</li>
         <li><i class="fas fa-map-marker-alt"></i> Nicolás Romero, Méx.</li>
-        <li><a href="https://mx.computrabajo.com/empleos-en-ciudad-de-mexico?utm_source=google&utm_medium=cpc&utm_campaign=1015516939&target=candidate&network=search&gad_source=1&gad_campaignid=1015516939&gbraid=0AAAAADbSM5fO7IG_FOpTQlXawabC3a5Eb&gclid=CjwKCAjwg7PDBhBxEiwAf1CVuykomr8rEh4h1BKgK9YHBp2u67uL8Rn4vN2smCsP2-vOXCMlBSTwXxoCggIQAvD_BwE&fgom=True" target="_blank">
+        <li><a href="https://mx.computrabajo.com/" target="_blank">
           <i class="fas fa-map-marker-alt"></i> Computrabajo 🔗</a></li>
-            <li><a href="https://www.linkedin.com/in/luis-david-camarillo-leon-bb675b332/" target="_blank"><i class="fas fa-map-marker-alt"></i>Linkedin 🔗</a></li>
-        </ul>
+        <li><a href="https://www.linkedin.com/in/luis-david-camarillo-leon-bb675b332/" target="_blank">
+          <i class="fas fa-map-marker-alt"></i> Linkedin 🔗</a></li>
+      </ul>
     </aside>
+
     <main class="content">
       <section>
         <h2>Perfil</h2>
         <p>Estudiante de "Desarrollo de Software Multiplataforma" (TSU), actualmente en el 6° cuatrimestre. Busco oportunidades para aprender y desarrollarme profesionalmente. Tengo experiencia en bodega durante 3 años, lo cual me permitió valorar el trabajo y enfocarme en seguir mi formación académica.</p>
       </section>
-            <section>
+
+      <section>
         <h2>Educación</h2>
-        <h3>Universidad Tecnològica Fidel Velàzquez - fecha de inicio (Enero/07/2024) - actualmente sigo estudiando</h3>
+        <h3>Universidad Tecnológica Fidel Velázquez <span>Enero 2024 - Actualidad</span></h3>
         <h3>IFPA – Bachillerato General</h3>
       </section>
+
       <section>
         <h2>Experiencia Laboral</h2>
         <h3>Almacenista – Salvaje Tentación <span>Nov 2020 – Nov 2023</span></h3>
         <p>Responsable del manejo y organización de productos, control de inventario y apoyo logístico.</p>
       </section>
+
       <section>
         <h2>Habilidades blandas</h2>
         <ul>
-          <li>trabajo en equipo</li>
-          <li>proactivo</li>
-          <li>sociable</li>
-          <li>responsable</li>
-          <li>honesto</li>
+          <li>Trabajo en equipo</li>
+          <li>Proactivo</li>
+          <li>Sociable</li>
+          <li>Responsable</li>
+          <li>Honesto</li>
         </ul>
       </section>
+
       <section>
         <h2>Habilidades Técnicas</h2>
-        <div class="skill"><span>Java</span><div class="bar"><div style="width: 60%"></div></div></div>
-        <div class="skill"><span>JavaScript</span><div class="bar"><div style="width: 40%"></div></div></div>
-        <div class="skill"><span>PHP</span><div class="bar"><div style="width: 40%"></div></div></div>
-        <div class="skill"><span>CSS</span><div class="bar"><div style="width: 60%"></div></div></div>
-        <div class="skill"><span>Desarrollo de software</span><div class="bar"><div style="width: 50%"></div></div></div>
-        <div class="skill"><span>Inglés</span><div class="bar"><div style="width: 30%"></div></div></div>
+        <ul>
+          <li>Java</li>
+          <li>JavaScript</li>
+          <li>PHP</li>
+          <li>CSS</li>
+          <li>Desarrollo de software</li>
+          <li>Inglés</li>
+        </ul>
       </section>
-
     </main>
   </div>
-  <!-- Botón para descargar el CV -->
-<div style="text-align: center; margin: 20px 0;">
-  <button id="download-btn">📄 Descargar CV en PDF</button>
-</div>
 
-<!-- Librería html2pdf.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <!-- Botón para descargar -->
+  <div style="text-align: center; margin: 20px 0;">
+    <button id="download-btn">📄 Descargar CV en PDF</button>
+  </div>
 
-<script>
-  document.getElementById("download-btn").addEventListener("click", () => {
-    // Seleccionamos el contenedor completo del CV
-    const element = document.querySelector(".cv-container");
+  <!-- Librería html2pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-    // Opciones para el PDF
-    const opt = {
-      margin: 0.5,
-      filename: 'CV_Luis_David_Camarillo_Leon.pdf',
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-    };
+  <script>
+    document.getElementById("download-btn").addEventListener("click", () => {
+      const element = document.querySelector(".cv-container");
 
-    // Genera y descarga el PDF
-    html2pdf().set(opt).from(element).save();
-  });
-</script>
+      const opt = {
+        margin: [0.3, 0.3, 0.3, 0.3], // márgenes: arriba, izq, abajo, der
+        filename: 'CV_Luis_David_Camarillo_Leon.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 3 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+      };
 
-  <script src="script.js"></script>
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
 </body>
 </html>
